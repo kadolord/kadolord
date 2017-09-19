@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Portfolio</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<link rel = "stylesheet" href = "css/style.css">
+	
+	</head>
+	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<div id = "top" class = "top">
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  <div class="container ">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>                        
+			  </button>
+				  <a class="navbar-brand" href="#"><p class = "tit">KADOLORD</p></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav navbar-right ">
+				
+					
+					<li ><a href="#one">HOME</a></li>
+					<li><a href="#two">ABOUT</a></li>
+					<li><a href="#three">PORTFOLIO</a></li>
+					<li><a href="#four">CONTACT</a></li>
+				
+			  </ul>
+			 
+			</div>
+		  
+		</nav>
+
+	
+			<header id = "one" class="masthead">
+		      <div class="overlay">
+		        <div class="container">
+		          <h1 class="display-1 ">Din Mark Dolor</h1>
+		          <span>ASPIRING WEB DESIGNER.DEVELOPER</span>
+				   
+		        </div>
+		      </div>
+		    </header>
+		    </div>
+
+
+			<div id = "content" class = "content">
+				<section class = "fill" id="two">
+			      <div class="container ">
+					
+			        
+			       
+			    </section>
+
+			<section class = "fill2" id="three">
+		      
+		    </section>
+
+			<section class = "fill3" id="four">
+			
+		    
+			</section>
+			<section class = "fill4" id="five">
+				<div class="container">
+					<hr>
+						<div class="text-center center-block">
+							<p class="txt-railway">Copyright 2017 - KADOLORD -</p>
+						 
+								<!-- Add font awesome icons -->
+								<a href="#" class="fa fa-facebook"></a>
+								<a href="#" class="fa fa-twitter"></a>
+								<a href="#" class="fa fa-google"></a>
+
+								<a href="#" class="fa fa-instagram"></a>
+
+						</div>
+					<hr>
+				</div>
+				
+		    
+			</section>
+	</div>
+	<!--<button onclick="topFunction()" id="myBtn" title="Go to top"><span class = "glyphicon glyphicon-menu-up"></span></button>
+	--> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="js/jqueryjj.js"></script>
+	
+	
+	<script>
+		// Select all links with hashes
+		$('a[href*="#"]')
+		  // Remove links that don't actually link to anything
+		  .not('[href="#"]')
+		  .not('[href="#0"]')
+		  .click(function(event) {
+			// On-page links
+			if (
+			  location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+			  && 
+			  location.hostname == this.hostname
+			) {
+			  // Figure out element to scroll to
+			  var target = $(this.hash);
+			  target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			  // Does a scroll target exist?
+			  if (target.length) {
+				// Only prevent default if animation is actually gonna happen
+				event.preventDefault();
+				$('html, body').animate({
+				  scrollTop: target.offset().top
+				}, 1000, function() {
+				  // Callback after animation
+				  // Must change focus!
+				  var $target = $(target);
+				  $target.focus();
+				  if ($target.is(":focus")) { // Checking if the target was focused
+					return false;
+				  } else {
+					$target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+					$target.focus(); // Set focus again
+				  };
+				});
+			  }
+			}
+		  });
+  
+  //scroll top button//
+
+  // When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {scrollFunction()};
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("myBtn").style.display = "block";
+				} else {
+					document.getElementById("myBtn").style.display = "none";
+				}
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+				document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+				document.documentElement.scrollTop = 0; // For IE and Firefox
+			}
+	//---------------------------------------------------//		
+		//browser window scroll (in pixels) after which the "back to top" link is shown
+		var offset = 300,
+		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		offset_opacity = 1200,
+		//duration of the top scrolling animation (in ms)
+		scroll_top_duration = 700;
+	//------------------read more/less toggle---------------------//
+	
+		$(document).ready(function() {
+		// Configure/customize these variables.
+		var showChar = 1000;  // How many characters are shown by default
+		var ellipsestext = "...";
+		var moretext = "Show more >>";
+		var lesstext = "Show less";
+		
+
+		$('.more').each(function() {
+			var content = $(this).html();
+	 
+			if(content.length > showChar) {
+	 
+				var c = content.substr(0, showChar);
+				var h = content.substr(showChar, content.length - showChar);
+	 
+				var html = c + '<span class="moreellipses">' + ellipsestext+ '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+	 
+				$(this).html(html);
+			}
+	 
+		});
+	 
+		$(".morelink").click(function(){
+			if($(this).hasClass("less")) {
+				$(this).removeClass("less");
+				$(this).html(moretext);
+			} else {
+				$(this).addClass("less");
+				$(this).html(lesstext);
+			}
+			$(this).parent().prev().toggle();
+			$(this).prev().toggle();
+			return false;
+		});
+	});
+	
+	
+
+	// Change color Nav bar //
+/*
+			$(document).ready(function(){       
+		   var scroll_start = 0;
+		   var startchange = $('#top');
+		   var offset = startchange.offset();
+		    if (startchange.length){
+		   $(document).scroll(function() { 
+		      scroll_start = $(this).scrollTop();
+		      if(scroll_start > offset.top) {
+		          $(".navbar-default").css('background-color', 'transparent');
+		       }
+		   });
+		    }
+		});
+		$(document).ready(function(){       
+		   var scroll_start = 0;
+		   var startchange = $('#content');
+		   var offset = startchange.offset();
+		    if (startchange.length){
+		   $(document).scroll(function() { 
+		      scroll_start = $(this).scrollTop();
+		      if(scroll_start > offset.top) {
+		          $(".navbar-default").css('background-color', '#000');
+		       }
+		   });
+		    }
+		});
+		$(document).ready(function(){       
+		   var scroll_start = 0;
+		   var startchange = $('#content2');
+		   var offset = startchange.offset();
+		    if (startchange.length){
+		   $(document).scroll(function() { 
+		      scroll_start = $(this).scrollTop();
+		      if(scroll_start > offset.top) {
+		          $(".navbar-default").css('background-color', '#000');
+		       }
+		   });
+		    }
+		});
+		$(document).ready(function(){       
+		   var scroll_start = 0;
+		   var startchange = $('#bottom');
+		   var offset = startchange.offset();
+		    if (startchange.length){
+		   $(document).scroll(function() { 
+		      scroll_start = $(this).scrollTop();
+		      if(scroll_start > offset.top) {
+		          $(".navbar-default").css('background-color', '#435196');
+		       }
+		   });
+		    }
+		});*/
+
+		function checkScroll(){
+	    var startY = $('.navbar-default').height() * 2; //The point where the navbar changes in px
+
+		    if($(window).scrollTop() > startY){
+		        $('.navbar-default').addClass("scrolled");
+		    }else{
+		        $('.navbar-default').removeClass("scrolled");
+		    }
+			}
+
+		if($('.navbar-default').length > 0){
+		    $(window).on("scroll load resize", function(){
+		        checkScroll();
+		    });
+		}
+	</script>
+		
+		<script type="text/javascript" src="../dist/headhesive.js"></script>
+		<script>
+
+        // Set options
+        var options = {
+            offset: '#showHere',
+            offsetSide: 'top',
+            classes: {
+                clone:   'banner--clone',
+                stick:   'banner--stick',
+                unstick: 'banner--unstick'
+            }
+        };
+
+        // Initialise with options
+        var banner = new Headhesive('.banner', options);
+
+        // Headhesive destroy
+        // banner.destroy();
+    </script>
+	
+	</body>
+</html>
